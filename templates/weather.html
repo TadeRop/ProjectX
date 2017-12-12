@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{% block title %}
+ Bmail - Current weather in Maribor
+{% endblock %}
+{% block content %}
+<h2>Current weather in {{ podatki.name }}</h2>
+<p>Description: {{ podatki.weather[0].description }}</p>
+<p>Current temperature: {{ podatki.main.temp }} °C</p>
+{% endblock %}

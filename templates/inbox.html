@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}Bmail - Inbox{% endblock title %}
+
+{% block content %}
+
+<h3>Inbox</h3>
+{% for message in sent_list %}
+    <p>
+        <strong>{{ message.email }}</strong> at {{ message.created.strftime('%d %B %Y at %H:%M') }}:
+        <br>
+        <em>{{ message.message }}</em>
+    </p>
+    <br>
+{% else %}
+    <p>No messages yet.</p>
+{% endfor %}
+{% endblock %}
