@@ -95,8 +95,8 @@ class MessengerHandler(BaseHandler):
 class InboxHandler(BaseHandler):
     def get(self):
         user = users.get_current_user()
-        sent_list = Message.query(Message.to == user.email()).fetch()
-        params = {"sent_list": sent_list}
+        inbox_list = Message.query(Message.to == user.email()).fetch()
+        params = {"inbox_list": inbox_list}
 
         logout_url = users.create_logout_url('/')
         params["logout_url"] = logout_url
