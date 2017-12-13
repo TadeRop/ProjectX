@@ -77,6 +77,8 @@ class MessengerHandler(BaseHandler):
     def post(self):
         user = users.get_current_user()
 
+        params = {}
+
         author = user.nickname()
         email = user.email()
         to = self.request.get("to")
